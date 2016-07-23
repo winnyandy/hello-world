@@ -54,8 +54,6 @@ echo "use_localtime=YES" >> /etc/vsftpd/vsftpd.conf
 echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf
 touch /etc/vsftpd/chroot_list
 systemctl restart vsftpd
-#----------------------------postgresql config----------------------
-sh /home/dic/www/psql/psql93.sh
 #----------------status log---------------------
 iptables-save > iptables.log
 systemctl status NetworkManager |grep Loaded>> status.log
@@ -68,5 +66,3 @@ systemctl status httpd |grep Loaded>> status.log
 systemctl status httpd |grep Active>> status.log
 systemctl status vsftpd |grep Loaded>> status.log
 systemctl status vsftpd |grep Active>> status.log
-systemctl status postgresql-9.3.service |grep Loaded>> status.log
-systemctl status postgresql-9.3.service |grep Active>> status.log
