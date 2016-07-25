@@ -30,6 +30,7 @@ systemctl restart iptables
 sed -i "s/SELINUX=.*/SELINUX=permissive/g" /etc/selinux/config
 #-----------------------------sshd config---------------------
 sed -i "s/#Port.*/Port 2222/g" /etc/ssh/sshd_config
+sed -i "s/#PermitRootLogin.*/PermitRootLogin no/g" /etc/ssh/sshd_config
 semanage port -a -t ssh_port_t -p tcp 2222
 systemctl restart sshd
 systemctl enable sshd
