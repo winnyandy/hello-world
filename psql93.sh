@@ -8,6 +8,7 @@ systemctl enable postgresql-9.3.service
 sed -i "s/#listen_addresses.*/listen_addresses = '*'/g" /var/lib/pgsql/9.3/data/postgresql.conf
 sed -i "s/#port=.*/port=5432/g" /var/lib/pgsql/9.3/data/postgresql.conf
 systemctl restart postgresql-9.3.service
+systemctl restart httpd
 #----------------postgresql log---------------------
 echo "新增資料庫: create database dbname;" >> postgresql_config.log
 echo "新增使用者: CREATE USER dic WITH  PASSWORD 'dic';" >> postgresql_config.log
