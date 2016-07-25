@@ -49,7 +49,7 @@ sed -i "s/anonymous_enable.*/anonymous_enable=NO/g" /etc/vsftpd/vsftpd.conf
 sed -i "s/#chroot_local.*/chroot_local_user=YES/g" /etc/vsftpd/vsftpd.conf
 sed -i "s/#chroot_list_enable.*/chroot_list_enable=YES/g" /etc/vsftpd/vsftpd.conf
 sed -i "s/#chroot_list_file.*/chroot_list_file=\/etc\/vsftpd\/chroot_list/g" /etc/vsftpd/vsftpd.conf
-sed -i "s/listen=Y.*/listen=NO/g" /etc/vsftpd/vsftpd.conf
+sed -i "s/listen_ipv6=YES.*/#listen_ipv6=YES/g" /etc/vsftpd/vsftpd.conf
 echo "use_localtime=YES" >> /etc/vsftpd/vsftpd.conf
 echo "allow_writeable_chroot=YES" >> /etc/vsftpd/vsftpd.conf
 touch /etc/vsftpd/chroot_list
