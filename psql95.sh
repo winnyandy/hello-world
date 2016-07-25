@@ -12,6 +12,7 @@ sed -i "81c local   all             all                                     md5"
 sed -i "83c host    all             all             127.0.0.1/32            md5" /var/lib/pgsql/9.5/data/pg_hba.conf
 sed -i "85c host    all             all             ::1/128                 md5" /var/lib/pgsql/9.5/data/pg_hba.conf
 systemctl restart postgresql-9.5.service
+systemctl restart httpd
 #----------------postgresql log---------------------
 echo "新增資料庫: create database dbname;" >> postgresql_config.log
 echo "新增使用者: CREATE USER dic WITH  PASSWORD 'dic';" >> postgresql_config.log
