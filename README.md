@@ -1,4 +1,4 @@
 # hello-world
 Welcome to winnyandy's github! 
-I share many shell script at here.
+I'll share many shell script in here.
 
